@@ -2,7 +2,7 @@ name: Deploy workflow 1
 on:
   push:
     branch:
-      - test1
+      -test1
 job:
   build:
     runs-on: ubuntu-latest
