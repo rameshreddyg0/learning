@@ -1,0 +1,31 @@
+name: Deploy workflow 1
+on:
+  push:
+    branch:
+      - test1
+
+job:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build job-1
+      - name: check out code
+        uses: actions/checkout@v2
+      - name: set up python
+        uses: actions/setup-python@v2
+        with:
+          python-verison: 3.8
+      - name: install libraries
+        run: |
+          cd function
+          pythong -m pip install --upgrade pip
+      - name: create zip bundle
+        run: |
+          cd function
+          zip -r ../${{ github.sha}}.zip
+      - name: storing artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: zipped-bundle
+          path: ${{github.sha}}.zip
+
