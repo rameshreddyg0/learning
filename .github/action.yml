@@ -1,7 +1,7 @@
 name: Deploy workflow 1
 on:
   push:
-    branch:
+    branches:
       - test1
 job:
   build:
