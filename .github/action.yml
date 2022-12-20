@@ -1,10 +1,11 @@
 name: Deploy workflow 1
+description: "this is fist workflow"
 on:
   push:
    branch:
       - test1
-jobs:
-  build:
+  jobs:
+    build:
     runs-on: ubuntu-latest
     steps:
       - name: build job-1
@@ -27,4 +28,3 @@ jobs:
         with:
           name: zipped-bundle
           path: ${{github.sha}}.zip
-
