@@ -1,5 +1,0 @@
-hostname = "app.terraform.io"
-organization = "org-name-secured"
-workspaces{
-    name = "azure-native-workspace"
-}
