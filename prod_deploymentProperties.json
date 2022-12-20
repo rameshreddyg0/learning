@@ -1,0 +1,69 @@
+{
+    "gcp": {
+        "native": {
+            "triggerDeployment" : true
+        },
+        "prisma": {
+            "triggerDeployment" : false
+        },
+        "sentinel": {
+           "triggerDeployment" : true,
+           "tfe_domain_name" : "",
+           "tfe_api_url" : "https://app.terraform.io/api/v2/",
+           "updatePolicySetProperties": [],
+           "newPolicySetProperties": [{
+           "policySetName": "GCP-Sentinel-Policy-Set-New",
+           "policySetDescription": "GCP Sentinel Policy Set1 from Pipeline",
+           "applyToAllWorkspaces": false,
+           "listOfWorkspaces": ["ws-6RqRr14MS3PnWrE7", "ws-YBY7PfSBzvXbmSSx"],
+           "vcsRepositoryIdentifier" : "sivapolicy/guardrails-pac",
+           "policiesPath" : "gcp/sentinel",
+           "tfe_org_name": "org-name-secured"
+        }]
+       }
+   },
+    "aws" : {
+        "native": {
+            "triggerDeployment" : true
+        },
+        "prisma": {
+         "triggerDeployment" : false
+        },
+        "sentinel": {
+         "triggerDeployment" : false,
+         "tfe_domain_name" : "",
+         "tfe_api_url" : "https://app.terraform.io/api/v2/",
+         "updatePolicySetProperties": [{
+             "tfe_org_name": "aexp",
+             "updatePolicySetDetails": [{
+                 "policySetID": "",
+                 "policySetName": "acb",
+                 "policySetDescription": "policies-for-aws-platform-new",
+                 "applyToAllWorkspaces": false,
+                 "listOfWorkspaces" : ["abc"],
+                 "vcsRepositoryIdentifier" : "sivapolicy/guardrails-pac",
+                 "policiesPath" : "aws/sentinel"
+             }]
+         }],
+         "newPolicySetProperties": [{
+             "policySetName": "AWS Sentinel Policy Set -1",
+             "policySetDescription": "AWS Sentinel Policy Set -1 from Pipeline",
+             "applyToAllWorkspaces": false,
+             "listOfWorkspaces": [""],
+             "vcsRepositoryIdentifier" : "sivapolicy/guardrails-pac",
+             "policiesPath" : "aws/sentinel",
+             "tfe_org_name": ""
+         },
+         {
+             "policySetName": "AWS Sentinel Policy Set -2",
+             "policySetDescription": "AWS Sentinel Policy Set -2 from Pipeline",
+             "applyToAllWorkspaces": false,
+             "listOfWorkspaces": [""],
+             "vcsRepositoryIdentifier" : "sivapolicy/guardrails-pac",
+             "policiesPath" : "aws/sentinel",
+             "tfe_org_name": ""
+ 
+         }]
+     }
+    }
+ }

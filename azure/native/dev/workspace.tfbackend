@@ -1,0 +1,5 @@
+hostname = ""
+organization = "gha"
+workspaces{
+    name ="azure-native-workspace"
+}

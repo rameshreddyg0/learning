@@ -1,0 +1,38 @@
+name: Native Prisma Validation
+#test1
+on: push
+  # workflow_call:
+  #   inputs:
+  #     cloud_provider:
+  #       required: true
+  #       type: string
+  #     policy_type:
+  #       required: true
+  #       type: string
+  #     branch:
+  #       required: true
+  #       type: string
+  #     secrets:
+  #       TFE_API_TOKEN:
+  #         required: true
+
+jobs:
+  native_prisma_validaiton:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Runner
+      uses: ./.github/actions/set-up-runner
+      with:
+        TFE_API_TOKEN: ${{ secrets.TFE_API_TOKEN }}
+    - name: Init
+      id: init
+      working-directory: scripts
+      run: |
+        mkdir artifacts
+        python terraform_init.py --cloud=${{ inputs.cloud_provider}} --policytype=#{{ inputs.policy_type}} --branch==${{ inputs.branch}} --artifact_dir='artifacts'
+    - name: Format Check
+      id: fmt
+      working-directory: scripts
+      run: |
+        python terrafor_format_check.py --cloud=${{ inputs.cloud_provider }} --policytype=${{ inputs.policy_type}} --artifact_dir="artifacts"

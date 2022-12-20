@@ -1,0 +1,310 @@
+{
+    "type": "object",
+    "properties": {
+        "gcp": {
+            "type": "object",
+            "properties": {
+                "native": {
+                    "type": "object",
+                    "properties": {
+                        "triggerDeployment": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "triggerDeployment"
+                    ]
+                },
+                "prisma": {
+                    "type": "object",
+                    "properties": {
+                        "triggerDeployment": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "triggerDeployment"
+                    ]
+                },
+                "sentinel": {
+                    "type": "object",
+                    "properties": {
+                        "triggerDeployment": {
+                            "type": "boolean"
+                        },
+                        "tfe_domain_name": {
+                            "type": "string"
+                        },
+                        "tfe_api_url": {
+                            "type": "string"
+                        },
+                        "updatePolicySetProperties": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "tfe_org_name": {
+                                        "type": "string"
+                                    },
+                                    "updatePolicySetDetails": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "policySetID": {
+                                                    "type": "string"
+                                                },
+                                                "policySetName": {
+                                                    "type": "string"
+                                                },
+                                                "policySetDescription": {
+                                                    "type": "string"
+                                                },
+                                                "applyToAllWorkspaces": {
+                                                    "type": "boolean"
+                                                },
+                                                "listOfWorkspaces": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "minLenght": 19,
+                                                        "maxLenght": 19
+                                                    }
+                                                },
+                                                "vcsRepositoryIdentifier": {
+                                                    "type": "string"
+                                                },
+                                                "policiesPath": {
+                                                    "type": "string"
+                                                },
+                                                "isOauthTokenToUpdate": {
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": [
+                                                "policySetName",
+                                                "applyToAllWorkspaces",
+                                                "listOfWorkspaces"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "tfe_org_name",
+                                    "updatePolicySetDetails"
+                                ]
+                            }
+                        },
+                        "newPolicySetProperties": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "policySetName": {
+                                        "type": "string"
+                                    },
+                                    "policySetDescription": {
+                                        "type": "string"
+                                    },
+                                    "applyToAllWorkspaces": {
+                                        "type": "boolean"
+                                    },
+                                    "vcsRepositoryIdentifier": {
+                                        "type": "string"
+                                    },
+                                    "policiesPath": {
+                                        "type": "string"
+                                    },
+                                    "listOfWorkspaces": {
+                                        "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "minLenght": 19,
+                                        "maxLenght": 19
+                                    }
+                                },
+                            "tfe_org_name": {
+                                "type": "string"
+                            }
+                                },
+                                "required": [
+                                    "policySetName",
+                                    "applyToAllWorkspaces",
+                                    "vcsRepositoryIdentifier",
+                                    "policiesPath",
+                                    "listOfWorkspaces",
+                                    "tfe_org_name"
+                                ]
+                            }                
+                        }
+                    },
+                    "required": [
+                        "triggerDeployment",
+                        "tfe_domain_name",
+                        "tfe_api_url",
+                        "updatePolicySetProperties"
+                    ]
+                }
+            },
+            "required": [
+                "native",
+                "prisma",
+                "sentinel"
+            ]
+        },
+        "aws":{
+            "type": "object",
+            "properties": {
+                "native": {
+                    "type": "object",
+                    "properties": {
+                        "triggerDeployment": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "triggerDeployment"
+                    ]
+                },
+                "prisma": {
+                    "type": "object",
+                    "properties": {
+                        "triggerDeployment": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "triggerDeployment"
+                    ]
+                },
+                "sentinel": {
+                    "type": "object",
+                    "properties": {
+                        "triggerDeployment": {
+                            "type": "boolean"
+                        },
+                        "tfe_domain_name": {
+                            "type": "string"
+                        },
+                        "tfe_api_url": {
+                            "type": "string"
+                        },
+                        "updatePolicySetProperties": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "tfe_org_name": {
+                                        "type": "string"
+                                    },
+                                    "updatePolicySetDetails": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "policySetID": {
+                                                    "type": "string"
+                                                },
+                                                "policySetName": {
+                                                    "type": "string"
+                                                },
+                                                "policySetDescription": {
+                                                    "type": "string"
+                                                },
+                                                "applyToAllWorkspaces": {
+                                                    "type": "boolean"
+                                                },
+                                                "listOfWorkspaces": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "minLenght": 19,
+                                                        "maxLenght": 19
+                                                    }
+                                                },
+                                                "vcsRepositoryIdentifier": {
+                                                    "type": "string"
+                                                },
+                                                "policiesPath": {
+                                                    "type": "string"
+                                                },
+                                                "isOauthTokenToUpdate": {
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": [
+                                                "policySetName",
+                                                "applyToAllWorkspaces",
+                                                "listOfWorkspaces"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "tfe_org_name",
+                                    "updatePolicySetDetails"
+                                ]
+                            }
+                        },
+                        "newPolicySetProperties": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "policySetName": {
+                                        "type": "string"
+                                    },
+                                    "policySetDescription": {
+                                        "type": "string"
+                                    },
+                                    "applyToAllWorkspaces": {
+                                        "type": "boolean"
+                                    },
+                                    "vcsRepositoryIdentifier": {
+                                        "type": "string"
+                                    },
+                                    "policiesPath": {
+                                        "type": "string"
+                                    },
+                                    "listOfWorkspaces": {
+                                        "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "minLenght": 19,
+                                        "maxLenght": 19
+                                    }
+                                },
+                            "tfe_org_name": {
+                                "type": "string"
+                            }
+                                },
+                                "required": [
+                                    "policySetName",
+                                    "applyToAllWorkspaces",
+                                    "vcsRepositoryIdentifier",
+                                    "policiesPath",
+                                    "listOfWorkspaces",
+                                    "tfe_org_name"
+                                ]
+                            }                
+                        }
+                    },
+                    "required": [
+                        "triggerDeployment",
+                        "tfe_domain_name",
+                        "tfe_api_url",
+                        "updatePolicySetProperties"
+                    ]
+                }
+            },
+            "required": [
+                "native",
+                "prisma",
+                "sentinel"
+            ]
+        }
+    },
+    "required": [
+        "gcp"
+    ]
+  }

@@ -1,0 +1,36 @@
+name: "Set up Runner"
+description: "This action sets up Python and installs deps using pip."
+inputs:
+  TFE_API_TOKEN:
+    required: true
+    description: "TFE API Token to connect to Terraform Enterprise"
+runs:
+  using: "composite"
+  steps:
+    # - name: Checkout the commit
+    #   uses: actions/checkout@v2
+    #   with:
+    #     token: ${{ inputs.token }}
+    - name: Echo TF token
+      run: |
+        echo ${{inputs.TF_API_TOKEN}}
+      shell: bash
+    # - uses: innovationnorway/setup-sentinel@v1
+    #   with:
+    #     version: "~0.15"
+    #   env:
+    #     ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+    - name: Install Dependencies
+      run: |
+        echo ${{ inputs.TFE_API_TOKEN }}
+        pip3 install -r scripts/requirements.text
+      shell: bash
+    - uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 1.1.2
+        cli_config_credentials_token: ${{ inputs.TFE_API_TOKEN }}
+
