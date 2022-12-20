@@ -1,0 +1,84 @@
+{
+    "gcp": {
+        "native": {
+            "triggerDeployment": true
+        },
+        "prisma": {
+            "triggerDeployment": false
+        },
+        "sentinel": {
+            "triggerDeployment": true,
+            "tfe_domain_name": "",
+            "tfe_api_url": "https://app.terraform.io/api/v2/",
+            "updatePolicySetProperties": [],
+            "newPolicySetProperties": [
+                {
+                    "policySetName": "GCP_Sentinel_Policy_Set",
+                    "policySetDescription": "GCP Sentinel Policy Set1 from Pipeline",
+                    "applyToAllWorkspaces": true,
+                    "listOfWorkspaces": [
+                        "ws-VNUtRzAtf42YH6WX",
+                        "ws-YBY7PfSBzvXbmSSx"
+                    ],
+                    "vcsRepositoryIdentifier": "sivapolicy/guardrails-pac",
+                    "policiesPath": "gcp/sentinel",
+                    "tfe_org_name": "gha"
+                }
+            ]
+        }
+    },
+    "aws": {
+        "native": {
+            "triggerDeployment": true
+        },
+        "prisma": {
+            "triggerDeployment": false
+        },
+        "sentinel": {
+            "triggerDeployment": true,
+            "tfe_domain_name": "",
+            "tfe_api_url": "https://app.terraform.io/api/v2/",
+            "updatePolicySetProperties": [],
+            "newPolicySetProperties": [
+                {
+                    "policySetName": "AWS_Sentinel_Policy_Set",
+                    "policySetDescription": "AWS Sentinel Policy Set1 from Pipeline",
+                    "applyToAllWorkspaces": true,
+                    "listOfWorkspaces": [
+                        "ws-VNUtRzAtf42YH6WX"
+                    ],
+                    "vcsRepositoryIdentifier": "sivapolicy/guardrails-pac",
+                    "policiesPath": "aws/sentinel",
+                    "tfe_org_name": "gha"
+                }
+            ]
+        }
+    },
+    "azure": {
+        "native": {
+            "triggerDeployment": true
+        },
+        "prisma": {
+            "triggerDeployment": false
+        },
+        "sentinel": {
+            "triggerDeployment": true,
+            "tfe_domain_name": "",
+            "tfe_api_url": "https://app.terraform.io/api/v2/",
+            "updatePolicySetProperties": [],
+            "newPolicySetProperties": [
+                {
+                    "policySetName": "Azure_Sentinel_Policy_Set",
+                    "policySetDescription": "Azure Sentinel Policy Set1 from Pipeline",
+                    "applyToAllWorkspaces": true,
+                    "listOfWorkspaces": [
+                        "ws-rAD9x8PYyacYg6iz"
+                    ],
+                    "vcsRepositoryIdentifier": "sivapolicy/guardrails-pac",
+                    "policiesPath": "azure/sentinel",
+                    "tfe_org_name": "gha"
+                }
+            ]
+        }
+    }
+}

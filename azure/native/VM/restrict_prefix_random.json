@@ -1,0 +1,28 @@
+{
+    "properties": {
+        "displayName": "shivam_restrictPrefix_random",
+        "policyType": "Custom",
+        "mode": "All",
+        "metadata": {
+            "category": "Prefix"
+        },
+        "parameters": {
+            "restrictedPrefix": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Restricted Prefix",
+                    "description": "restricted prefix"
+                }
+            }
+        },
+        "policyRule": {
+            "if": {
+                "value": "[if(greaterOrEquals(length(field('name')), 6), substring(field('name'), 0, 6), 'not starting with random')]",
+                "equals": "[parameters('restrictedPrefix')]"
+            },
+            "then": {
+                "effect": "deny"
+            }
+        }
+    }
+}
